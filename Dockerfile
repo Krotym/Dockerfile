@@ -6,8 +6,7 @@ RUN apt-get -y install apache2
 RUN apt-get -y install git
 RUN apt-get -y install nano
 
-RUN dpkg-divert --local --rename --add /sbin/initctl
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+
 RUN apt-get update
 RUN apt-get -y install mysql-server
 EXPOSE 3306
