@@ -7,7 +7,7 @@ RUN apt-get -y install git
 RUN apt-get -y install nano
 
 RUN apt-get -y update
-RUN apt-get install mysql-server
+RUN apt-get -y install mysql-server
 RUN mysql_secure_installation
 
 RUN cd /var/www/html &&\
