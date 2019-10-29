@@ -1,48 +1,16 @@
 
-FROM oraclelinux:7-slim
+
+FROM ubuntu:16.04
 
 
+RUN apt-get -y update
+RUN apt-get -y install apache2
+RUN apt-get -y install git
+RUN apt-get -y install nano
 
-ARG MYSQL_SERVER_PACKAGE=mysql-community-server-minimal-8.0.18
+RUN cd /var/www/html &&\
+ rm index.html && \
+ git clone https://github.com/Krotym/test.git .
 
-ARG MYSQL_SHELL_PACKAGE=mysql-shell-8.0.18
-
-
-
-# Install server
-
-RUN yum install -y https://repo.mysql.com/mysql-community-minimal-release-el7.rpm \
-
-      https://repo.mysql.com/mysql-community-release-el7.rpm \
-
-  && yum-config-manager --enable mysql80-server-minimal \
-
-  && yum install -y \
-
-      $MYSQL_SERVER_PACKAGE \
-
-      $MYSQL_SHELL_PACKAGE \
-
-      libpwquality \
-
-  && yum clean all \
-
-  && mkdir /docker-entrypoint-initdb.d
-
-
-
-VOLUME /var/lib/mysql
-
-
-
-COPY docker-entrypoint.sh /entrypoint.sh
-
-COPY healthcheck.sh /healthcheck.sh
-
-ENTRYPOINT ["/entrypoint.sh"]
-
-HEALTHCHECK CMD /healthcheck.sh
-
-EXPOSE 3306 33060
-
-CMD ["mysqld"]
+CMD ["/usr/sbin/apache2ctl","-DFOREGROUND"]
+EXPOSE 80
