@@ -43,6 +43,6 @@ RUN chmod +x /usr/sbin/run-lamp.sh
 
 EXPOSE 80
 EXPOSE 3306
-ENTRYPOINT ["/root/ms.sh"]
+
 CMD ["/usr/sbin/run-lamp.sh"]
 
