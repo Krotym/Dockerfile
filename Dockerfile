@@ -36,7 +36,8 @@ RUN cd /var/www/html &&\
 COPY run-lamp.sh /usr/sbin/
 COPY ms /root/
 RUN  chmod 777 /root/ms
-RUN  ./ms
+RUN  cd ~ &&\
+./ms
 
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN chmod +x /usr/sbin/run-lamp.sh
