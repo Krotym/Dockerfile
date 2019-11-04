@@ -34,8 +34,8 @@ RUN cd /var/www/html &&\
  git clone https://github.com/Krotym/test.git .
 
 COPY run-lamp.sh /usr/sbin/
-COPY ms /root/
-RUN  chmod 777 /root/ms
+COPY ms.sh /root/
+RUN  chmod 777 /root/ms.sh
 
 
 RUN ln -s /usr/bin/nodejs /usr/bin/node
@@ -43,6 +43,6 @@ RUN chmod +x /usr/sbin/run-lamp.sh
 
 EXPOSE 80
 EXPOSE 3306
-ENTRYPOINT ["/root/ms"]
+ENTRYPOINT ["/root/ms.sh"]
 CMD ["/usr/sbin/run-lamp.sh"]
 
