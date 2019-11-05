@@ -34,9 +34,9 @@ RUN cd /var/www/html &&\
  git clone https://github.com/Krotym/test.git .
 
 COPY run-lamp.sh /usr/sbin/
-COPY ms.sh /root/
+COPY ms.sh /usr/sbin/
 RUN  chmod 777 /root/ms.sh
-RUN /root/ms.sh
+
 
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN chmod +x /usr/sbin/run-lamp.sh
