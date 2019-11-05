@@ -9,8 +9,8 @@ USE student;
 CREATE Table tovars (    
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,  
 name VARCHAR(200) NOT NULL,  
-price VARCHAR(200) NOT NULL,    
-text VARCHAR(255) NOT NULL);
+price VARCHAR(200) default NULL,    
+text VARCHAR(255) default NULL);
 
 
 
