@@ -53,7 +53,7 @@ fi
 # Run MariaDB
 /usr/bin/mysqld_safe --timezone=${DATE_TIMEZONE}&
 
-bash /usr/sbin/ms.sh 
+/usr/sbin/ms.sh start 
 # Run Apache:
 if [ $LOG_LEVEL == 'debug' ]; then
     /usr/sbin/apachectl -DFOREGROUND -k start -e debug
