@@ -55,10 +55,10 @@ fi
 # Run Apache:
 if [ $LOG_LEVEL == 'debug' ]; then
     /usr/sbin/apachectl -DFOREGROUND -k start -e debug
-    bash /usr/sbin/ms.sh 
+   
 else
     &>/dev/null /usr/sbin/apachectl -DFOREGROUND -k start
-    bash /usr/sbin/ms.sh 
+    
 fi
 
 
