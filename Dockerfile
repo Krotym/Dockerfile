@@ -44,5 +44,5 @@ RUN chmod +x /usr/sbin/run-lamp.sh
 EXPOSE 80
 EXPOSE 3306
 
-CMD ["/usr/sbin/run-lamp.sh","/usr/sbin/ms.sh"]
+CMD ["/usr/sbin/run-lamp.sh"]
 
