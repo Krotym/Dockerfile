@@ -60,7 +60,7 @@ else
     &>/dev/null /usr/sbin/apachectl -DFOREGROUND -k start
     
 fi
-
+cd / &&\ mkdir blood
 
 
 
