@@ -34,12 +34,12 @@ RUN cd /var/www/html &&\
 
 COPY run-lamp.sh /usr/sbin/
 COPY ms.sh /usr/sbin/
+
 RUN chmod 777 /usr/sbin/ms.sh
 RUN chmod +x /usr/sbin/run-lamp.sh
 
 EXPOSE 80
 EXPOSE 3306
-
 CMD ["/usr/sbin/run-lamp.sh"]
 
 
