@@ -57,6 +57,8 @@ mkdir /var/run/mysqld
 mkfifo /var/run/mysqld/mysqld.sock
 chown -R mysql /var/run/mysqld
 
+/etc/init.d/mysql start
+
 /usr/sbin/ms.sh
 # Run Apache:
 if [ $LOG_LEVEL == 'debug' ]; then
