@@ -26,7 +26,7 @@ RUN apt-get install -y \
         php7.0-xsl
 RUN apt-get install apache2 libapache2-mod-php7.0 -y
 RUN apt-get install mariadb-server  -y
-RUN apt-get install git  nano tree curl  -y
+RUN apt-get install git  nano  -y
 
 
 RUN cd /var/www/html &&\
@@ -38,7 +38,7 @@ COPY ms.sh /usr/sbin/
 RUN  chmod 777 /usr/sbin/ms.sh
 
 
-RUN ln -s /usr/bin/nodejs /usr/bin/node
+
 RUN chmod +x /usr/sbin/run-lamp.sh
 
 EXPOSE 80
