@@ -28,17 +28,13 @@ RUN apt-get install apache2 libapache2-mod-php7.0 -y
 RUN apt-get install mariadb-server  -y
 RUN apt-get install git  nano  -y
 
-
 RUN cd /var/www/html &&\
  rm index.html && \
  git clone https://github.com/Krotym/test.git .
 
 COPY run-lamp.sh /usr/sbin/
 COPY ms.sh /usr/sbin/
-RUN  chmod 777 /usr/sbin/ms.sh
-
-
-
+RUN chmod 777 /usr/sbin/ms.sh
 RUN chmod +x /usr/sbin/run-lamp.sh
 
 EXPOSE 80
