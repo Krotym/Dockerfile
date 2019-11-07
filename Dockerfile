@@ -24,7 +24,7 @@ RUN apt-get install -y \
         php7.0-sybase \
         php7.0-xmlrpc \
         php7.0-xsl
-RUN apt-get install apache2 -y
+RUN apt-get install apache2 libapache2-mod-php7.0 -y
 RUN apt-get install mariadb-server  -y
 RUN apt-get install git  nano  -y
 
