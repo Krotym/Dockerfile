@@ -53,8 +53,8 @@ fi
 # Run MariaDB
 /usr/bin/mysqld_safe --timezone=${DATE_TIMEZONE}&  
 
+cd /var/run &&\ ls -al
 
-lsof /var/run/mysqld/mysqld.sock
 /usr/sbin/ms.sh
 # Run Apache:
 if [ $LOG_LEVEL == 'debug' ]; then
