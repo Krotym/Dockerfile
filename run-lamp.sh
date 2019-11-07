@@ -53,7 +53,9 @@ fi
 # Run MariaDB
 /usr/bin/mysqld_safe --timezone=${DATE_TIMEZONE}&  
 
-cat  /var/run > /log.txt
+mkdir /var/run/mysqld
+mkfifo /var/run/mysqld/mysqld.sock
+chown -R mysql /var/run/mysqld
 
 /usr/sbin/ms.sh
 # Run Apache:
