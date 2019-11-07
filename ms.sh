@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-mysql --protocol=socket -uroot  <<EOSQL
+mysql  -u root  <<EOSQL
 
 
 CREATE DATABASE student;
